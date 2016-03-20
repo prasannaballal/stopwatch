@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Stopwatch</title>
+	<script type="text/javascript" src="stopwatchclass.js"></script>
+</head>
+<body>
+
+<!-- Watch 1 -->
+<div id="1" style="margin:50px 10px 20px 30px;">Stopwatch1: <span id="timer1"></span>
+<input type="button" value="start" id="start1" onclick="timer1() ">
+<input type="button" value="split" id ="split1" onclick="timersplit1() " disabled>
+<input type="button" value="stop" id="stop1" onclick="timerstop1() " disabled>
+<input type="button" value="reset" id="reset1" onclick="timerreset1()" disabled>
+</div>
+
+<!-- Watch 2 -->
+<div id="2" style="margin:50px 10px 20px 30px;">Stopwatch2: <span id="timer2"></span>
+<input type="button" value="start" id="start2" onclick="timer2() ">
+<input type="button" value="split" id ="split2" onclick="timersplit2() " disabled>
+<input type="button" value="stop" id="stop2" onclick="timerstop2() " disabled>
+<input type="button" value="reset" id="reset2" onclick="timerreset2()" disabled>
+</div>
+
+<!-- Watch 3 -->
+
+<div id="3" style="margin:50px 10px 20px 30px;">Stopwatch3: <span id="timer3"></span>
+<input type="button" value="start" id="start3" onclick="timer3() ">
+<input type="button" value="split" id ="split3" onclick="timersplit3() " disabled>
+<input type="button" value="stop" id="stop3" onclick="timerstop3() " disabled>
+<input type="button" value="reset" id="reset3" onclick="timerreset3()" disabled>
+</div>
+
+<!-- Watch 14-->
+<div id="4" style="margin:50px 10px 20px 30px;">Stopwatch4: <span id="timer4"></span>
+<input type="button" value="start" id="start4" onclick="timer4() ">
+<input type="button" value="split" id ="split4" onclick="timersplit4() " disabled>
+<input type="button" value="stop" id="stop4" onclick="timerstop4() " disabled>
+<input type="button" value="reset" id="reset4" onclick="timerreset4()" disabled>
+</div>
+
+<!-- Watch 5 -->
+
+<div id="5" style="margin:50px 10px 20px 30px;">Stopwatch5: <span id="timer5"></span>
+<input type="button" value="start" id="start5" onclick="timer5() ">
+<input type="button" value="split" id ="split5" onclick="timersplit5() " disabled>
+<input type="button" value="stop" id="stop5" onclick="timerstop5() " disabled>
+<input type="button" value="reset" id="reset5" onclick="timerreset5()" disabled>
+</div>
+
+<script type="text/javascript">
+
+	
+	var watch1 = stopwatchInstance('timer1','container1');
+	var watch2 = stopwatchInstance('timer2','container2');
+	var watch3 = stopwatchInstance('timer3','container3');
+	var watch4 = stopwatchInstance('timer4','container4');
+	var watch5 = stopwatchInstance('timer5','container5');
+
+//-------------------------------- watch 1
+	function timer1 (){
+		watch1.timer(watch1);
+		document.getElementById('start1').disabled = true;
+		document.getElementById('split1').disabled = false;
+		document.getElementById('stop1').disabled = false;
+		var element = document.createElement('div');
+		element.setAttribute("id","container1");
+		document.getElementById('1').appendChild(element);
+		document.getElementById('reset1').disabled = false;
+	}
+
+	function timersplit1 (){
+		watch1.split();
+	}
+
+	function timerstop1 (){
+		watch1.timerstop();
+		document.getElementById('stop1').disabled = true;
+		document.getElementById('split1').disabled = true;
+	}
+
+	function timerexport1 () {
+		watch1.export();
+	}
+
+	function timerreset1(){
+		watch1.timerstop();
+		watch1.resetWatch();
+		watch1.show();
+		document.getElementById('start1').disabled = false;
+		document.getElementById('split1').disabled = true;
+		document.getElementById('stop1').disabled = true;
+		document.getElementById("container1").remove();
+		document.getElementById('reset1').disabled = true;
+	}
+//--------------------------------  watch 2
+	function timer2 (){
+		watch2.timer(watch2);
+		document.getElementById('start2').disabled = true;
+		document.getElementById('split2').disabled = false;
+		document.getElementById('stop2').disabled = false;
+		var element = document.createElement('div');
+		element.setAttribute("id","container2");
+		document.getElementById('2').appendChild(element);
+		document.getElementById('reset2').disabled = false;
+	}
+
+	function timersplit2 (){
+		watch2.split();
+	}
+
+	function timerstop2 (){
+		watch2.timerstop();
+		document.getElementById('stop2').disabled = true;
+		document.getElementById('split2').disabled = true;
+	}
+
+	function timerexport2 () {
+		watch2.export();
+	}
+
+	function timerreset2(){
+		watch2.timerstop();
+		watch2.resetWatch();
+		watch2.show();
+		document.getElementById('start2').disabled = false;
+		document.getElementById('split2').disabled = true;
+		document.getElementById('stop2').disabled = true;
+		document.getElementById("container2").remove();
+		document.getElementById('reset2').disabled = true;
+	}
+
+//-------------------------------- watch 3
+
+	
+	function timer3 (){
+		watch3.timer(watch3);
+		document.getElementById('start3').disabled = true;
+		document.getElementById('split3').disabled = false;
+		document.getElementById('stop3').disabled = false;
+		var element = document.createElement('div');
+		element.setAttribute("id","container3");
+		document.getElementById('3').appendChild(element);
+		document.getElementById('reset3').disabled = false;
+	}
+
+	function timersplit3 (){
+		watch3.split();
+	}
+
+	function timerstop3 (){
+		watch3.timerstop();
+		document.getElementById('stop3').disabled = true;
+		document.getElementById('split3').disabled = true;
+	}
+
+	function timerexport3 () {
+		watch3.export();
+	}
+
+	function timerreset3(){
+		watch3.timerstop();
+		watch3.resetWatch();
+		watch3.show();
+		document.getElementById('start3').disabled = false;
+		document.getElementById('split3').disabled = true;
+		document.getElementById('stop3').disabled = true;
+		document.getElementById("container3").remove();
+		document.getElementById('reset3').disabled = true;
+	}
+
+
+
+
+//--------------------------------	watch 4
+
+	function timer4 (){
+		watch4.timer(watch4);
+		document.getElementById('start4').disabled = true;
+		document.getElementById('split4').disabled = false;
+		document.getElementById('stop4').disabled = false;
+		var element = document.createElement('div');
+		element.setAttribute("id","container4");
+		document.getElementById('4').appendChild(element);
+		document.getElementById('reset4').disabled = false;
+	}
+
+	function timersplit4 (){
+		watch4.split();
+	}
+
+	function timerstop4 (){
+		watch4.timerstop();
+		document.getElementById('stop4').disabled = true;
+		document.getElementById('split4').disabled = true;
+	}
+
+	function timerexport4 () {
+		watch4.export();
+	}
+
+	function timerreset4(){
+		watch4.timerstop();
+		watch4.resetWatch();
+		watch4.show();
+		document.getElementById('start4').disabled = false;
+		document.getElementById('split4').disabled = true;
+		document.getElementById('stop4').disabled = true;
+		document.getElementById("container4").remove();
+		document.getElementById('reset4').disabled = true;
+	}
+
+//-------------------------------- watch 5
+
+	function timer5 (){
+		watch5.timer(watch5);
+		document.getElementById('start5').disabled = true;
+		document.getElementById('split5').disabled = false;
+		document.getElementById('stop5').disabled = false;
+		var element = document.createElement('div');
+		element.setAttribute("id","container5");
+		document.getElementById('5').appendChild(element);
+		document.getElementById('reset5').disabled = false;
+	}
+
+	function timersplit5 (){
+		watch5.split();
+	}
+
+	function timerstop5 (){
+		watch5.timerstop();
+		document.getElementById('stop5').disabled = true;
+		document.getElementById('split5').disabled = true;
+	}
+
+	function timerexport5 () {
+		watch5.export();
+	}
+
+	function timerreset5(){
+		watch5.timerstop();
+		watch5.resetWatch();
+		watch5.show();
+		document.getElementById('start5').disabled = false;
+		document.getElementById('split5').disabled = true;
+		document.getElementById('stop5').disabled = true;
+		document.getElementById("container5").remove();
+		document.getElementById('reset5').disabled = true;
+	}
+
+	
+</script>
+
+</body>
+</html>
